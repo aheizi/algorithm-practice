@@ -5,7 +5,7 @@ import com.aheizi.linked_list.data_structure.ListNode;
 /**
  * Created by yangquan1 on 2019-08-11.
  *
- * 题目描述：
+ * 题目来源：https://leetcode-cn.com/problems/reverse-linked-list/
  *
  * 反转一个单链表。
  *
