@@ -23,7 +23,7 @@ public class ReverseLinkedList {
      * 1. 节点没有引用其上一个节点，因此必须事先存储其前一个元素
      * 2. 改变next的时候，会丢失原next节点，事先存储
      *
-     * 经验：定好当前节点
+     * 一句话总结：当前node指向上一个node，还要知道下一个node是谁
      *
      * @param head
      * @return

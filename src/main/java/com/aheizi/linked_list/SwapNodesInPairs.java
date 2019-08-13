@@ -25,7 +25,7 @@ public class SwapNodesInPairs {
      * @param head
      * @return
      */
-    public static ListNode swapPairs(ListNode head) {
+    public static ListNode swapPairs1(ListNode head) {
         ListNode pre = new ListNode(0);
         pre.next = head;
 
@@ -44,6 +44,16 @@ public class SwapNodesInPairs {
         return pre.next;
     }
 
+    /**
+     * 递归：待实现 囧
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode swapPairs2(ListNode head) {
+        return null;
+    }
+
     public static void main(String[] args) {
         ListNode node = new ListNode(1);
         ListNode next = node;
@@ -53,7 +63,7 @@ public class SwapNodesInPairs {
         }
         System.out.println("before swap：" + node);
 
-        ListNode swapPairs = swapPairs(node);
+        ListNode swapPairs = swapPairs1(node);
         System.out.println("after swap: " + swapPairs);
     }
 
