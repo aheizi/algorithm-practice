@@ -50,6 +50,26 @@ public class RemoveDuplicatesFromSortedList {
         return result.next;
     }
 
+    /**
+     * 迭代，优化写法
+     *
+     * 根本不需要pre啊，我在想什么...
+     *
+     * @param head
+     * @return
+     */
+    public static ListNode deleteDuplicates1(ListNode head) {
+        ListNode current = head;
+        while (current != null && current.next != null) {
+            if (current.next.val == current.val) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(1);
