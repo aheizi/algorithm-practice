@@ -53,12 +53,29 @@ public class MergeTwoSortedLists {
     /**
      * 递归
      *
+     * 终止条件：两条链表分别名为 l1 和 l2，当 l1 为空或 l2 为空时结束
+     * 返回值：每一层调用都返回排序好的链表头
+     * 本级递归内容：如果 l1 的 val 值更小，则将 l1.next 与排序好的链表头相接，l2 同理
+     *
      * @param l1
      * @param l2
      * @return
      */
     public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
-        return null;
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists2(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists2(l1, l2.next);
+            return l2;
+        }
     }
 
     public static void main(String[] args) {
@@ -79,7 +96,7 @@ public class MergeTwoSortedLists {
         m2.next = m3;
         m3.next = null;
 
-        ListNode result = mergeTwoLists1(l1, m1);
+        ListNode result = mergeTwoLists2(l1, m1);
         while (result != null) {
             System.out.print(result.val + " ");
             result = result.next;
