@@ -1,5 +1,9 @@
 package com.aheizi.stack;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * Created by yangquan1 on 2019-08-14.
  *
@@ -39,8 +43,44 @@ package com.aheizi.stack;
  */
 public class ValidParentheses {
 
-    public boolean isValid(String s) {
-        return false;
+    /**
+     * map存储 ):( 刚好能解决，括号集合和映射关系
+     *
+     * 遇到左括号压栈，遇到右括号弹出栈顶元素并匹配
+     * 若匹配失败，或者栈已空，则表达式无效
+     * 匹配结束，若栈非空，表达式无效
+     *
+     * @param s
+     * @return
+     */
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<Character>();
+        Map<Character, Character> characterMap = new HashMap<Character, Character>();
+        characterMap.put(')', '(');
+        characterMap.put('}', '{');
+        characterMap.put(']', '[');
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (characterMap.containsKey(c)) {
+                // 注意空栈不能直接pop, EmptyStackException
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                // 当前值和栈顶元素不相等，立即判定为非法
+                if (characterMap.get(c) != stack.pop()) {
+                    return false;
+                }
+            } else {
+                // 左括号直接入栈
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
     }
 
+    public static void main(String[] args) {
+        String s = "]";
+        System.out.println(isValid(s));
+    }
 }
