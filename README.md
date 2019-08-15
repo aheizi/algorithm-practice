@@ -15,4 +15,4 @@
 1. [3sum](src/main/java/com/aheizi/array/Sum3.java) TODO
 
 ### 堆栈
-1. [Valid Parentheses](src/main/java/com/aheizi/stack/ValidParentheses.java) TODO
+1. [Valid Parentheses](src/main/java/com/aheizi/stack/ValidParentheses.java) 
