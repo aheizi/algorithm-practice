@@ -19,6 +19,7 @@
 2. [Implement Queue Using Stacks](src/main/java/com/aheizi/stack/ImplementQueueUsingStacks.java)
 
 ### 堆
-1. [Kth Largest Element in an Array](src/main/java/com/aheizi/stack/ImplementQueueUsingStacks.java)
+1. [Kth Largest Element in an Array](src/main/java/com/aheizi/heap/KthLargestElementInArray.java)
+2. [Sliding Window Maximum](src/main/java/com/aheizi/heap/SlidingWindowMaximum.java)
 
 ### 队列
