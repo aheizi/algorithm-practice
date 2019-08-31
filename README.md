@@ -29,4 +29,4 @@
 2. [valid-anagram](src/main/java/com/aheizi/hash_table/ValidAnagram.java)
 
 ### 树
-1. [er-cha-shu-de-zhong-xu-bian-li-by-leetcode](src/main/java/com/aheizi/tree/BinaryTreeInorderTraversal.java)
+1. [binary-tree-inorder-traversal](src/main/java/com/aheizi/tree/BinaryTreeInorderTraversal.java)
