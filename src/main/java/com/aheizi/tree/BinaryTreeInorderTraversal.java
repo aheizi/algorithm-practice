@@ -87,6 +87,22 @@ public class BinaryTreeInorderTraversal {
      * <p>
      * 非递归且不用额外空间不用栈遍历二叉树
      * https://stackoverflow.com/questions/5502916/explain-morris-inorder-tree-traversal-without-using-stacks-or-recursion
+     * <p>
+     * Step 1: 将当前节点current初始化为根节点
+     * <p>
+     * Step 2: While current不为空，
+     * <p>
+     * 若current没有左子节点
+     * <p>
+     * a. 将current添加到输出
+     * <p>
+     * b. 进入右子树，亦即, current = current.right
+     * <p>
+     * 否则
+     * <p>
+     * a. 在current的左子树中，令current成为最右侧节点的右子节点
+     * <p>
+     * b. 进入左子树，亦即，current = current.left
      *
      * @param root
      * @return

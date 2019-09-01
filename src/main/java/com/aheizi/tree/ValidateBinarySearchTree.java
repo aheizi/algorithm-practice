@@ -2,6 +2,8 @@ package com.aheizi.tree;
 
 import com.aheizi.tree.data_structure.TreeNode;
 
+import java.util.Stack;
+
 /**
  * Created by yangquan1 on 2019-08-31.
  *
@@ -43,8 +45,59 @@ public class ValidateBinarySearchTree {
      * @param root
      * @return
      */
-    public boolean isValidBST(TreeNode root) {
-        return false;
+    public boolean isValidBST1(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        double min = -Double.MAX_VALUE;
+
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+
+            root = stack.pop();
+
+            if (root.val <= min) {
+                return false;
+            }
+            min = root.val;
+            root = root.right;
+        }
+
+        return true;
+    }
+
+
+    /**
+     * 递归比较上下界
+     *
+     * @param root
+     * @return
+     */
+    public boolean isValidBST2(TreeNode root) {
+        return helper(root, null, null);
+    }
+
+    private boolean helper(TreeNode treeNode, Integer lower, Integer upper){
+        if (treeNode == null) {
+            return true;
+        }
+
+        if (lower != null && treeNode.val <= lower) {
+            return false;
+        }
+        if (upper != null && treeNode.val >= upper) {
+            return false;
+        }
+
+        if (!helper(treeNode.left, lower, treeNode.val)){
+            return false;
+        }
+        if (!helper(treeNode.right, treeNode.val, upper)) {
+            return false;
+        }
+
+        return true;
     }
 
 }

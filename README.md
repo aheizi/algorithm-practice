@@ -30,3 +30,4 @@
 
 ### 树
 1. [binary-tree-inorder-traversal](src/main/java/com/aheizi/tree/BinaryTreeInorderTraversal.java)
+2. [validate-binary-search-tree](src/main/java/com/aheizi/tree/ValidateBinarySearchTree.java)
