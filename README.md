@@ -31,3 +31,4 @@
 ### 树
 1. [binary-tree-inorder-traversal](src/main/java/com/aheizi/tree/BinaryTreeInorderTraversal.java)
 2. [validate-binary-search-tree](src/main/java/com/aheizi/tree/ValidateBinarySearchTree.java)
+3. [lowest-common-ancestor-of-a-binary-search-tree](src/main/java/com/aheizi/tree/LowestCommonAncestorOfABinarySearchTree.java)
